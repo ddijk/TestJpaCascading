@@ -7,6 +7,8 @@
     <class>nl.dijkrosoft.snippets.testjpacascading.entities.Adres</class>
     <class>nl.dijkrosoft.snippets.testjpacascading.cascading.Portfolio</class>
     <class>nl.dijkrosoft.snippets.testjpacascading.cascading.PortfolioTd</class>
+    <class>nl.dijkrosoft.snippets.testjpacascading.portfolio.PfTd</class>
+    <class>nl.dijkrosoft.snippets.testjpacascading.portfolio.Pf</class>
     <properties>
       <property name="javax.persistence.jdbc.url" value="jdbc:derby://localhost:1527/sun-appserv-samples"/>
       <property name="javax.persistence.jdbc.password" value="APP"/>
