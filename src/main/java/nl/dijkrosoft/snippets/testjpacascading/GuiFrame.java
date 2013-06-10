@@ -18,12 +18,13 @@ import nl.dijkrosoft.snippets.testjpacascading.entities.Seller;
  *
  * @author dick
  */
-public class GuiFrame extends javax.swing.JFrame {
-
+public class GuiFrame extends javax.swing.JFrame
+{
   /**
    * Creates new form GuiFrame
    */
-  public GuiFrame() {
+  public GuiFrame()
+  {
     initComponents();
   }
 
@@ -34,7 +35,8 @@ public class GuiFrame extends javax.swing.JFrame {
    */
   @SuppressWarnings("unchecked")
   // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
-  private void initComponents() {
+  private void initComponents()
+  {
 
     jPanel1 = new javax.swing.JPanel();
     jPanel2 = new javax.swing.JPanel();
@@ -49,16 +51,20 @@ public class GuiFrame extends javax.swing.JFrame {
     setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
     jButton2.setText("create Adres");
-    jButton2.addActionListener(new java.awt.event.ActionListener() {
-      public void actionPerformed(java.awt.event.ActionEvent evt) {
-        jButton2ActionPerformed(evt);
+    jButton2.addActionListener(new java.awt.event.ActionListener()
+    {
+      public void actionPerformed(java.awt.event.ActionEvent evt)
+      {
+        createaAdresPerformed(evt);
       }
     });
 
     jLabel2.setText("adres");
 
-    jTextField2.addActionListener(new java.awt.event.ActionListener() {
-      public void actionPerformed(java.awt.event.ActionEvent evt) {
+    jTextField2.addActionListener(new java.awt.event.ActionListener()
+    {
+      public void actionPerformed(java.awt.event.ActionEvent evt)
+      {
         jTextField2ActionPerformed(evt);
       }
     });
@@ -87,9 +93,11 @@ public class GuiFrame extends javax.swing.JFrame {
     );
 
     jButton1.setText("Create Seller");
-    jButton1.addActionListener(new java.awt.event.ActionListener() {
-      public void actionPerformed(java.awt.event.ActionEvent evt) {
-        jButton1ActionPerformed(evt);
+    jButton1.addActionListener(new java.awt.event.ActionListener()
+    {
+      public void actionPerformed(java.awt.event.ActionEvent evt)
+      {
+        createSellerActionPerformed(evt);
       }
     });
 
@@ -148,43 +156,43 @@ public class GuiFrame extends javax.swing.JFrame {
     pack();
   }// </editor-fold>//GEN-END:initComponents
 
-  private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+  private void createSellerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_createSellerActionPerformed
     System.out.println("button klikt");
     EntityManagerFactory emf = Persistence.createEntityManagerFactory("myPU");
     EntityManager em = emf.createEntityManager();
-    
+
     em.getTransaction().begin();
     final long sellerId = Long.parseLong(jTextField1.getText());
-    
+
     Seller seller = new Seller(sellerId);
 //    seller.setItemList(createItemList(seller));
     seller.setAdresList(createAdresList());
     em.persist(seller);
-    
+
     em.getTransaction().commit();
-    
+
     em.close();
     emf.close();
-    
-  }//GEN-LAST:event_jButton1ActionPerformed
 
-  private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+  }//GEN-LAST:event_createSellerActionPerformed
+
+  private void createaAdresPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_createaAdresPerformed
     System.out.println("create Adres button klikt");
     EntityManagerFactory emf = Persistence.createEntityManagerFactory("myPU");
     EntityManager em = emf.createEntityManager();
-    
+
     em.getTransaction().begin();
-    
+
     Adres adres = new Adres();
     adres.setStraat(jTextField2.getText());
     adres.setId(3L);
     em.persist(adres);
-    
+
     em.getTransaction().commit();
-    
+
     em.close();
     emf.close();
-  }//GEN-LAST:event_jButton2ActionPerformed
+  }//GEN-LAST:event_createaAdresPerformed
 
   private void jTextField2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField2ActionPerformed
     // TODO add your handling code here:
@@ -193,34 +201,48 @@ public class GuiFrame extends javax.swing.JFrame {
   /**
    * @param args the command line arguments
    */
-  public static void main(String args[]) {
+  public static void main(String args[])
+  {
     /* Set the Nimbus look and feel */
     //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
         /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-     * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
+     * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html
      */
-    try {
-      for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-	if ("Nimbus".equals(info.getName())) {
-	  javax.swing.UIManager.setLookAndFeel(info.getClassName());
-	  break;
-	}
+    try
+    {
+      for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels())
+      {
+        if ("Nimbus".equals(info.getName()))
+        {
+          javax.swing.UIManager.setLookAndFeel(info.getClassName());
+          break;
+        }
       }
-    } catch (ClassNotFoundException ex) {
+    }
+    catch (ClassNotFoundException ex)
+    {
       java.util.logging.Logger.getLogger(GuiFrame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-    } catch (InstantiationException ex) {
+    }
+    catch (InstantiationException ex)
+    {
       java.util.logging.Logger.getLogger(GuiFrame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-    } catch (IllegalAccessException ex) {
+    }
+    catch (IllegalAccessException ex)
+    {
       java.util.logging.Logger.getLogger(GuiFrame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-    } catch (javax.swing.UnsupportedLookAndFeelException ex) {
+    }
+    catch (javax.swing.UnsupportedLookAndFeelException ex)
+    {
       java.util.logging.Logger.getLogger(GuiFrame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
     }
     //</editor-fold>
 
     /* Create and display the form */
-    java.awt.EventQueue.invokeLater(new Runnable() {
-      public void run() {
-	new GuiFrame().setVisible(true);
+    java.awt.EventQueue.invokeLater(new Runnable()
+    {
+      public void run()
+      {
+        new GuiFrame().setVisible(true);
       }
     });
   }
@@ -236,9 +258,10 @@ public class GuiFrame extends javax.swing.JFrame {
   private javax.swing.JTextField jTextField2;
   // End of variables declaration//GEN-END:variables
 
-  private List<Item> createItemList(Seller seller) {
+  private List<Item> createItemList(Seller seller)
+  {
     List<Item> list = new ArrayList<Item>();
-    Item item = new Item (seller.getId()+100);
+    Item item = new Item(seller.getId() + 100);
     item.setSellerId(seller);
     item.setDescription("descr");
     list.add(item);
@@ -246,13 +269,14 @@ public class GuiFrame extends javax.swing.JFrame {
     return list;
   }
 
-  private List<Adres> createAdresList() {
+  private List<Adres> createAdresList()
+  {
     Adres a1 = new Adres();
     a1.setStraat("kievit");
     a1.setId(1L);
     Adres a2 = new Adres();
     a2.setStraat("zonneweide");
     a2.setId(2L);
-    return Arrays.asList(a1,a2);
+    return Arrays.asList(a1, a2);
   }
 }

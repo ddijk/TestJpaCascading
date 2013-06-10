@@ -16,56 +16,63 @@ import javax.persistence.SequenceGenerator;
  * @author dick
  */
 @Entity
-public class Adres implements Serializable {
+public class Adres implements Serializable
+{
   private static final long serialVersionUID = 1L;
   @Id
 //  @GeneratedValue(strategy = GenerationType.SEQUENCE,generator = "myseq" )
- // @SequenceGenerator(name = "myseq", sequenceName = "SEQUENCE", allocationSize = 1)
+  // @SequenceGenerator(name = "myseq", sequenceName = "SEQUENCE", allocationSize = 1)
   @GeneratedValue(strategy = GenerationType.AUTO)
   private Long id;
-
   private String straat;
-  
-  public Long getId() {
+
+  public Long getId()
+  {
     return id;
   }
 
-  public void setId(Long id) {
+  public void setId(Long id)
+  {
     this.id = id;
   }
 
   @Override
-  public int hashCode() {
+  public int hashCode()
+  {
     int hash = 0;
     hash += (id != null ? id.hashCode() : 0);
     return hash;
   }
 
   @Override
-  public boolean equals(Object object) {
+  public boolean equals(Object object)
+  {
     // TODO: Warning - this method won't work in the case the id fields are not set
-    if (!(object instanceof Adres)) {
+    if (!(object instanceof Adres))
+    {
       return false;
     }
     Adres other = (Adres) object;
-    if ((this.id == null && other.id != null) || (this.id != null && !this.id.equals(other.id))) {
+    if ((this.id == null && other.id != null) || (this.id != null && !this.id.equals(other.id)))
+    {
       return false;
     }
     return true;
   }
 
   @Override
-  public String toString() {
+  public String toString()
+  {
     return "nl.dijkrosoft.snippets.testjpacascading.entities.Adres[ id=" + id + " ]";
   }
 
-  public String getStraat() {
+  public String getStraat()
+  {
     return straat;
   }
 
-  public void setStraat(String straat) {
+  public void setStraat(String straat)
+  {
     this.straat = straat;
   }
-  
-  
 }
