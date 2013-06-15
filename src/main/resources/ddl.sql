@@ -1,5 +1,8 @@
 --select * from APP.PORTFOLIOTD;
 
+set schema APP;
+delete from PF where ID=3;
+
 drop table app.pf_td;
 drop table app.pf;
 
@@ -12,4 +15,3 @@ alter table app.pf_td add  primary key(pf_id, startdate);
 alter table APP.pf_td add CONSTRAINT my_fk foreign key(pf_id)  references APP.pf(id) ON DELETE CASCADE;
 
 --ALTER TABLE APP.PF_TD DROP FOREIGN KEY FK_PF_TD_PF_ID;
-

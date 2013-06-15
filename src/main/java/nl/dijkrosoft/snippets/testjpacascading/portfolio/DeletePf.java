@@ -12,35 +12,24 @@ import javax.persistence.Persistence;
  *
  * @author DickD
  */
-public class CreatePf
+public class DeletePf
 {
-  public static final int pfId = 2;
-
   public static void main(String[] args)
   {
-    System.out.println("about to create Portf");
+    System.out.println("about to delete Portf");
     EntityManagerFactory emf = Persistence.createEntityManagerFactory("myPU2");
     EntityManager em = emf.createEntityManager();
 
     em.getTransaction().begin();
 
-    Pf pf = new Pf(pfId);
-    PfTd td1 = new PfTd(pfId, new Date());
-    td1.setNaam("teedee een");
 
-    Date now = new Date();
-    long l = now.getTime();
-    PfTd td2 = new PfTd(pfId, new Date(l - 24 * 3600 * 1000));
-    td2.setNaam("teedee twee");
-
-    List tds = Arrays.asList(td1, td2);
-
-    pf.setPfTdList(tds);
-
-    em.persist(pf);
+    Pf pf = em.find(Pf.class, new Integer(3));
+    System.out.println("Pf found:" + pf);
+    em.remove(pf);
     em.getTransaction().commit();
 
     em.close();
+
     emf.close();
   }
 }

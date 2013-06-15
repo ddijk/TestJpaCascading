@@ -23,12 +23,13 @@ import javax.xml.bind.annotation.XmlTransient;
 @Table(name = "PF")
 @XmlRootElement
 @NamedQueries(
-{
+  {
   @NamedQuery(name = "Pf.findAll", query = "SELECT p FROM Pf p"),
   @NamedQuery(name = "Pf.findById", query = "SELECT p FROM Pf p WHERE p.id = :id"),
   @NamedQuery(name = "Pf.findByDsc", query = "SELECT p FROM Pf p WHERE p.dsc = :dsc")
 })
-public class Pf implements Serializable {
+public class Pf implements Serializable
+{
   private static final long serialVersionUID = 1L;
   @Id
   @Basic(optional = false)
@@ -36,7 +37,7 @@ public class Pf implements Serializable {
   private Integer id;
   @Column(name = "DSC")
   private String dsc;
-  @OneToMany(cascade = CascadeType.ALL, mappedBy = "pf")
+  @OneToMany(cascade = CascadeType.REMOVE, mappedBy = "pf")
   private List<PfTd> pfTdList;
 
   public Pf()
@@ -106,7 +107,6 @@ public class Pf implements Serializable {
   @Override
   public String toString()
   {
-    return "nl.dijkrosoft.snippets.testjpacascading.portfolio.Pf[ id=" + id + " ]";
+    return "Pf[ id=" + id + " ]";
   }
-
 }
