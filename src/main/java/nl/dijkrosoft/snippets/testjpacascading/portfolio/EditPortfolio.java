@@ -29,18 +29,12 @@ public class EditPortfolio {
       
       System.out.println("td removed " +tdList.remove(1));
       Pf pf2 = em.merge(pf);
-      print(pf2);
+      Printer.print(pf2);
       em.getTransaction().commit();
     }
      em.close();
     emf.close();
   }
 
-  private static void print(Pf pf2) {
-    System.out.println("pf "+ pf2);
-    System.out.println("aantal tds " + pf2.getPfTdList());
-    for ( PfTd td : pf2.getPfTdList()) {
-      System.out.println("td: " + td);
-    }
-  }
+
 }
