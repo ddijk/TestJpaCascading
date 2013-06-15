@@ -108,7 +108,7 @@ public class PfTd implements Serializable {
   @Override
   public String toString()
   {
-    return "nl.dijkrosoft.snippets.testjpacascading.portfolio.PfTd[ pfTdPK=" + pfTdPK + " ]";
+    return "Td met name " + naam;
   }
 
 }

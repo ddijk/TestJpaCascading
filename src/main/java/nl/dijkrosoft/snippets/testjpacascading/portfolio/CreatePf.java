@@ -12,7 +12,7 @@ import javax.persistence.Persistence;
  *
  * @author DickD
  */
-public class Main
+public class CreatePf
 {
   public static void main(String[] args)
   {

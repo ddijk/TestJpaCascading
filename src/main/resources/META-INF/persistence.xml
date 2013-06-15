@@ -17,4 +17,21 @@
       <property name="eclipselink.ddl-generation" value="drop-and-create-tables"/>
     </properties>
   </persistence-unit>
+  <persistence-unit name="myPU2" transaction-type="RESOURCE_LOCAL">
+    <provider>org.eclipse.persistence.jpa.PersistenceProvider</provider>
+    <class>nl.dijkrosoft.snippets.testjpacascading.entities.Seller</class>
+    <class>nl.dijkrosoft.snippets.testjpacascading.entities.Item</class>
+    <class>nl.dijkrosoft.snippets.testjpacascading.entities.Adres</class>
+    <class>nl.dijkrosoft.snippets.testjpacascading.cascading.Portfolio</class>
+    <class>nl.dijkrosoft.snippets.testjpacascading.cascading.PortfolioTd</class>
+    <class>nl.dijkrosoft.snippets.testjpacascading.portfolio.PfTd</class>
+    <class>nl.dijkrosoft.snippets.testjpacascading.portfolio.Pf</class>
+    <properties>
+      <property name="javax.persistence.jdbc.url" value="jdbc:derby://localhost:1527/sun-appserv-samples"/>
+      <property name="javax.persistence.jdbc.password" value="APP"/>
+      <property name="javax.persistence.jdbc.driver" value="org.apache.derby.jdbc.ClientDriver"/>
+      <property name="javax.persistence.jdbc.user" value="APP"/>
+      <property name="eclipselink.ddl-generation" value="create-tables"/>
+    </properties>
+  </persistence-unit>
 </persistence>
